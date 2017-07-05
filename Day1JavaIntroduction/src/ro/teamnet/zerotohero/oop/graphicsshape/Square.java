@@ -1,7 +1,5 @@
 package ro.teamnet.zerotohero.oop.graphicsshape;
 
-import ro.teamnet.zerotohero.oop.graphicsshape.Shape;
-
 /**
  * Created by Iordan.Serdin on 7/4/2017.
  */

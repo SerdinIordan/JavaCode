@@ -1,8 +1,5 @@
 package ro.teamnet.zerotohero.oop;
 
-import ro.teamnet.zerotohero.Canvas;
-import ro.teamnet.zerotohero.oop.graphicsshape.*;
-
 /**
  * Created by Iordan.Serdin on 7/4/2017.
  */

@@ -1,8 +1,6 @@
 package ro.teamnet.zerotohero.oop.graphicsshape;
 
 
-import ro.teamnet.zerotohero.oop.graphicsshape.Shape;
-
 public class Circle extends Shape {
     int xpos;
     int ypos;
