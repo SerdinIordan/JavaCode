@@ -37,13 +37,13 @@ public class Exercise1Test {
         expectedForEach.add(39);
     }
 
-    @Test
+    /*@Test
     public void testIterator() throws Exception {
         List<Integer> testResults = ex1.iterateUsingListIterator();
         Assert.assertEquals("Test sum with iterator", expected.get(0), testResults.get(0));
         Assert.assertEquals("Test min with iterator", expected.get(1), testResults.get(1));
         Assert.assertEquals("Test max with iterator", expected.get(2), testResults.get(2));
-    }
+    }*/
 
     @Test
     public void testFor() throws Exception {

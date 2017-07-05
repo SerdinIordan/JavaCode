@@ -26,7 +26,7 @@ public class MyImplementedList<E> {
     /**
      * The maximum accepted load property of the data structure.
      */
-    private static final double LOAD_FACTOR = 0.75d;
+    private static final double LOAD_FACTOR = 0.75d;     //putem inlocui cu altceva
 
     /**
      * The factor for increasing the size of the data structure.
@@ -57,12 +57,51 @@ public class MyImplementedList<E> {
 
     //TODO a) implement the empty constructor for the your data structure
     public MyImplementedList() {
+        this.size=0;
+        elementData=new Object[DEFAULT_CAPACITY];   //capacitatea maxima suportata de vector
+        capacityAfterExtending=DEFAULT_CAPACITY;
+
+
         //TODO a) HINT - DEFAULT_CAPACITY, capacityAfterExtending and elementData properties
+
     }
 
+    public int getCapacityAfterExtending() {
+        return capacityAfterExtending;
+    }
+
+    public void setCapacityAfterExtending(int capacityAfterExtending) {
+        this.capacityAfterExtending = capacityAfterExtending;
+    }
     //TODO b) create the int size() method that returns the size of the data structure
 
+    public int getSize() {
+        return size;
+    }
+
+
     //TODO c) create the boolean add(E e) method that adds at the end of the data structure an element
+    public boolean add(E e){
+        //if (this.size<capacityAfterExtending){
+        if (this.size<capacityAfterExtending*LOAD_FACTOR) {
+            extendCapacity(capacityAfterExtending);
+            elementData[this.size] = e;
+            this.size++;
+            return true;
+        }else{
+            elementData[this.size] = e;
+            this.size++;
+            return true;
+        }
+           // capacityAfterExtending++;
+            //return true;
+
+        //}else{
+          //  capacityAfterExtending++;
+           // return false;
+        //}
+
+    }
     //TODO pay attention to the LOAD_FACTOR of the data structure
 
     //TODO d) create the boolean isEmpty() method that checks if the data structure have elements
@@ -85,7 +124,11 @@ public class MyImplementedList<E> {
 
     //TODO k) extend the current default capacity, if the number of elements in the data structure is > 75% of it
     //TODO you should name it: void extendCapacity(int capacity) - HINT use capacity, DEFAULT_CAPACITY, LOAD_FACTOR and INCREASE_SIZE_FACTOR
-
+    public void extendCapacity(int capacity){
+        if (this.size<capacityAfterExtending*LOAD_FACTOR){
+            capacityAfterExtending+=capacity*INCREASE_SIZE_FACTOR;
+        }
+    }
     //TODO l) implement the iterator() method in order to use the foreach statement over your data structure - HINT Iterable interface
     //TODO and implement a custom iterator for your custom data structure - methods boolean hasNext(), Object next() and void remove()
 

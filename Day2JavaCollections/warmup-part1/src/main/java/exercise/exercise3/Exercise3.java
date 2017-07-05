@@ -1,6 +1,6 @@
 package exercise.exercise3;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Radu.Hoaghe on 04/20/2015.
@@ -35,16 +35,26 @@ public class Exercise3 {
         // TODO Exercise #3 b) add the elements from listToAdd to the Sets
 
         // TODO Exercise #3 c) Check the content of the Sets
+        TreeSet<String> s1=new TreeSet<String>();    //afiseaza elementele in ordine crescatoare (dupa nume)
+        s1.addAll(listToAdd);
+        HashSet<String> s2=new HashSet<String>();   //nu afiseaza nimic
+        s1.addAll(listToAdd);
+        LinkedHashSet<String> s3=new LinkedHashSet<String>();    //afiseaza elementele exact asa cum sunt in oridinea aceea
+        s3.addAll(listToAdd);
         System.out.println("\nThe elements contained in the first Set: ");
-
+        System.out.println(s1);
         System.out.println("\nThe elements contained in the second Set: ");
-
+        System.out.println(s2);
         System.out.println("\nThe elements contained in the third Set: ");
-
+        System.out.println(s3);
 
         System.out.println("\nThe elements contained in the TreeSet after inserting two duplicates: ");
 
         // TODO Exercise #3 d) Add to the TreeSet two elements that already exist in the Set
         // TODO Exercise #3 d) and print again the TreeSet. What do you see?
+        s1.add("collection");
+        s1.add("that");
+        System.out.println(s1); // afiseaza elementele tot la fel duplicatele nu conteaza(elimina dupicatele)
+
     }
 }

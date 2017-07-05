@@ -81,7 +81,10 @@ public class Exercise2Test {
             v[i] = i;
 
         listToTest.addAll(Arrays.asList(v));
+
         Assert.assertEquals("Test addAll with all equal elements", addAllExpectedTest1, listToTest.getDifferentElements());
+        System.out.println(listToTest);
+        System.out.println(listToTest.getDifferentElements());
 
         for(int i = 0; i < 5; i++)
             v[i] = 5 * i;

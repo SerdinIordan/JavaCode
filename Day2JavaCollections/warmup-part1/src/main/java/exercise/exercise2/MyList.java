@@ -1,6 +1,6 @@
 package exercise.exercise2;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Created by Radu.Hoaghe on 20.04.2015.
@@ -39,16 +39,101 @@ public class MyList<Integer> extends ArrayList<Integer> {
 
     // A counter to hold the number of adds that were made on the list
     private int differentElements;
+    //ArrayList<Integer> lista;
 
     public MyList(){
         differentElements = 0;
+        //lista=new ArrayList<Integer>();
     }
 
     // TODO Exercise #2 a) Override add() and addAll() methods so that the list should retain the number of
+    public boolean add(Integer e){
+        if (!super.contains(e)) {
+            this.differentElements++;
+        }
+        super.add(e);
+        return true;
+    }
+    public void add(int index, Integer e){
+        if (!super.contains(e)) {
+            this.differentElements++;
+            super.add(index,e);
+        }
+    }
+
+
+
+
+    public boolean addAll(Collection<? extends Integer> c){
+        //verificam daca avem elementele din c in lista mea
+        for (Integer elem:c){
+            if (!super.contains(elem)){
+                this.differentElements++;
+                super.add(elem);
+            }
+        }
+        return false;
+    }
+    public boolean addAll(int index,Collection<? extends Integer> c){
+        //verificam daca avem elementele din c in lista mea
+        for (Integer elem:c){
+            if (!super.contains(elem)){
+                this.differentElements++;
+                super.add(index,elem);
+            }
+        }
+        return false;
+    }
+
     // TODO Exercise #2 a) different elements (Hint: check out the methods signatures on the List documentation)
 
     // TODO Exercise #2 b) Override the remove methods so that the number of different elements is updated when
     // TODO Exercise #2 b) an element is removed
+    public Integer remove(int index){
+        int nr=0;
+            for (int i = 0; i < super.size(); i++) {
+                if (super.get(index)==super.get(i)){
+                    nr++;
+                }
+            }
+            if (nr==1){
+                this.differentElements--;   //doar daca e 1 atunci il scade
+            }
+        return super.remove(index);
+
+
+    }
+
+    public boolean remove(Object o){
+        int nr=0;
+        boolean contine=false;
+        if (super.contains(o)){
+            for (int i=0;i<super.size();i++){
+                if (o.equals(super.get(i))){
+                    nr++;
+                }
+            }
+            if (nr==1)
+                this.differentElements--;
+                super.remove(o);
+                contine=true;
+
+        }
+        return contine;
+    }
+
+    // TODO Exercise #2 b) Override the remove methods so that the number of different elements is updated when
+    // TODO Exercise #2 b) an element is removed
+   /* public Integer remove(Integer e){
+        if (!super.contains(e)) {
+            this.differentElements--;
+            return super.remove(e);
+        }
+        return false;
+    }*/
+
+
+
     // TODO Exercise #2 b) hint: you need to update the number of different elements only when
     // TODO Exercise #2 b) the element that needs to be removed is the last element of its kind in the list
 
@@ -56,6 +141,22 @@ public class MyList<Integer> extends ArrayList<Integer> {
 
     // TODO Exercise #2 d) Return the number of different elements that exist into the list
     public int getDifferentElements() {
-        return 0;
+        return this.differentElements;
+    }
+
+    public static void main(String args[]){
+        MyList l=new MyList();
+        ArrayList<java.lang.Integer> a2=new ArrayList<java.lang.Integer>();
+        for(int i = 0; i < 10; i++)
+            l.add(i);
+        int v[];
+        v=new int[20];
+        for(int i = 0; i < 5; i++)
+            v[i] = i;
+
+        l.addAll(Arrays.asList(v));
+        System.out.println(l);
+
+
     }
 }

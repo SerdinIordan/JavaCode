@@ -17,7 +17,7 @@ public class Exercise4Test {
 
     @Before
     public void beforeMethod() {
-        testingStringValues = new MyImplementedList<String>();
+       // testingStringValues = new MyImplementedList<String>();
         testingIntegerValues = new MyImplementedList<Integer>();
 
         populateLists();
@@ -27,27 +27,27 @@ public class Exercise4Test {
      * The add(Object o_O) method should work before executing a test!
      */
     private void populateLists() {
-//        testingStringValues.add("Testing ");
-//        testingStringValues.add("the ");
-//        testingStringValues.add("current ");
-//        testingStringValues.add("list!");
-//        testingStringValues.add("Testing ");
-//        testingStringValues.add("huh?!");
+       /*testingStringValues.add("Testing ");
+        testingStringValues.add("the ");
+        testingStringValues.add("current ");
+        testingStringValues.add("list!");
+        testingStringValues.add("Testing ");
+        testingStringValues.add("huh?!");*/
 
-//        testingIntegerValues.add(0);
-//        testingIntegerValues.add(1);
-//        testingIntegerValues.add(2);
-//        testingIntegerValues.add(3);
+       testingIntegerValues.add(0);
+        testingIntegerValues.add(1);
+       testingIntegerValues.add(2);
+       testingIntegerValues.add(3);
     }
 
-    @Test
-    public void testAddAndSizeMethodsOverStringList() {
-//        Assert.assertTrue(testingStringValues.size() == 6);
-    }
+   // @Test
+   /* public void testAddAndSizeMethodsOverStringList() {
+      Assert.assertTrue(testingStringValues.getSize() == 6);
+    }*/
 
     @Test
     public void testAddAndSizeMethodsOverIntegerList() {
-//        Assert.assertTrue(testingIntegerValues.size() == 4);
+        Assert.assertTrue(testingIntegerValues.getSize() == 4);
     }
 
     @Test
@@ -58,6 +58,7 @@ public class Exercise4Test {
 
     @Test
     public void testIsEmptyMethodOverIntegerList() {
+        //Todo use Iterator and remove classic for
 //        for (int i = 0; i < testingIntegerValues.size(); i++) {
 //            testingIntegerValues.remove(i);
 //        }
@@ -88,10 +89,10 @@ public class Exercise4Test {
 
     @Test
     public void testListForOneExtension() {
-//        for (int i = 4; i < 12; i++) {
-//            testingIntegerValues.add(i);
-//        }
-//        Assert.assertTrue(testingIntegerValues.size() == 12);
+        for (int i = 4; i < 12; i++) {
+           testingIntegerValues.add(i);
+        }
+       Assert.assertTrue(testingIntegerValues.getSize() == 12);
     }
 
     @Test
