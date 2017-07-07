@@ -2,7 +2,7 @@ package exercise1;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Radu.Hoaghe on 4/20/2015.
@@ -30,7 +30,14 @@ public class Exercise1 {
         // The list of countries that start with the 'R' character
         List<String> seekingCountries = new ArrayList<String>();
 
+        //tarile care incep cu R
+
         // TODO Exercise #1 a) You need to iterate over the map keys using a foreach loop (see Map.keySet())
+        for (String elem:countries.keySet()){
+            if (elem.startsWith("R")==true){
+                seekingCountries.add(elem);
+            }
+        }
         // TODO Exercise #1 a) and add the countries that start with 'R' character into the seekingCountries list
         // TODO Exercise #1 a) hint: see String documentation
 
@@ -45,7 +52,12 @@ public class Exercise1 {
         // TODO Exercise #1 b) You need to iterate over the map entries using a foreach loop (see Map.Entry)
         // TODO Exercise #1 b) and convert to lowercase (hint: String documentation) all the countries that contain 'Q'
         // TODO Exercise #1 b) or 'q' letter into the seekingCountries list
+        for (Map.Entry<String,String> entry :countries.entrySet()){   //entry in lista de entry-uri
+                if (entry.getKey().contains("Q")==true || entry.getKey().contains("q")==true){
+                    seekingCountries.add(entry.getKey().toLowerCase());
 
+                }
+        }
         return seekingCountries;
     }
 
@@ -56,6 +68,19 @@ public class Exercise1 {
 
         // TODO Exercise #1 c) You need to iterate over the map values using a foreach loop (see Map.values())
         // TODO Exercise #1 c) and find the capital city with the longest name
+
+        List<String> capitale=new ArrayList<String>();
+
+        capitale.addAll(countries.values());
+        int max=capitale.get(0).length();
+        seekingCapital=capitale.get(0);
+
+        for (String elem:capitale){
+            if (elem.length()>max){
+                max=elem.length();
+                seekingCapital=elem;
+            }
+        }
 
         return seekingCapital;
     }

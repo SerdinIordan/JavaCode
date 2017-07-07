@@ -2,14 +2,29 @@ import exercise4.MyHashMap;
 import junit.framework.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class Exercise4Test {
 
     @Test
     public void testPutMethod() throws Exception {
+        /*ArrayList<LinkedList<MyHashMap.MyEntry>> buckets=new ArrayList<LinkedList<MyHashMap.MyEntry>>(16);
+
+        for (int i=0;i<16;i++){
+//            buckets.get(i)=new LinkedList<MyEntry>() ;
+            buckets.add(new LinkedList<MyHashMap.MyEntry>());
+            System.out.println(buckets.get(i));
+        }
+        String key="1";
+        System.out.println(key.hashCode()%16);*/
         MyHashMap myHashMap = getMyHashMap();
         HashMap<String, String> expected = getExpected();
+        System.out.println("marimea myHashMap"+myHashMap.size());
+        System.out.println(myHashMap);
+        System.out.println("Marimea expected"+expected.size());
+        System.out.println(expected);
 
         Assert.assertEquals("Test size", myHashMap.size(), expected.size());
 
@@ -68,7 +83,8 @@ public class Exercise4Test {
     public void testRemoveMethod() throws Exception {
         MyHashMap myHashMap = getMyHashMap();
         Assert.assertTrue("Test remove method", myHashMap.remove("ALGERIA") != null);
-
+        System.out.println(myHashMap.size());
+        System.out.println(myHashMap.keySet());
         Assert.assertEquals("Test size", myHashMap.size(), 3);
 
         Assert.assertEquals("Test if key was removed", true, myHashMap.get("ALGERIA") == null);
@@ -139,10 +155,10 @@ public class Exercise4Test {
         HashMap<String, String> expected = getExpected();
 
         Assert.assertEquals("Test if expected contains all the entries from MyHashMap", true,
-                expected.entrySet().containsAll(myHashMap.entrySet()));
+                expected.entrySet().containsAll(myHashMap.keySet()));
 
         Assert.assertEquals("Test if MyHashMap contains all the entries from expected", true,
-                myHashMap.entrySet().containsAll(expected.entrySet()));
+                myHashMap.entrySet().containsAll(expected.keySet()));
     }
 
     private MyHashMap getMyHashMap(){

@@ -45,6 +45,8 @@ public class Exercise2Test {
         Student student2 = studentList.get(4); // Mihai Popescu
         Student student3 = studentList.get(8); // Mihai Popescu
         Assert.assertEquals("Test equals method from student", true, student1.equals(student2));
+        System.out.println("mrsadasdasd");
+        System.out.println(student1.equals(student2));
 
         Assert.assertEquals("Test reflexitivity on equals method", true, student1.equals(student1));
 
