@@ -11,7 +11,8 @@ import java.util.List;
 public class QueryBuilder {
     private Object tableName;
     private List<ColumnInfo> queryColumns;
-    private List<QueryType> queryType;
+    private QueryType queryType;
+    private List<Condition> conditions;
     public Object getValueForQuery(Object value){
         if (value instanceof String){
             return "'"+value+"'";
@@ -22,5 +23,10 @@ public class QueryBuilder {
         }
         return value.toString();
     }
+   /* public QueryBuilder addCondition(Condition codition){
+        //return QueryBuilder
+
+
+    }*/
 
 }
