@@ -1,0 +1,31 @@
+
+//docker
+docker pull wnameless/oracle-xe-11g
+docker run --name oracle-db -d -p 49160:22 -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
+docker ps
+docker exec -it oracle-db bash
+exit--
+docker commit id la docker ps  oracle_image:v1
+docker rm -f $(docker ps -a -q)
+ 
+
+docker run --name oracle-db -d -p 49160:22 -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true oracle_image:v1
+
+docker ps
+
+//tomcat
+docker pull alexbottea/z2h-tomcat:latest  
+
+docker run --name tomcat -p 49100:8080 -p 49200:22 -d alexbottea/z2h-tomcat
+
+chrome ip:49100
+
+
+server.xml la Connector 
+tomcat-users.xml 
+
+sample.war trebuie pus in containerul tau dupa ce l-ai descarcat
+descarci sample.war in iordan.serdin (descarci)
+scp -P 49200 sample.war root@192.168.99.100:/usr/local/tomcat/webapps
+chrome http://192.168.99.100:49100/sample/
+
