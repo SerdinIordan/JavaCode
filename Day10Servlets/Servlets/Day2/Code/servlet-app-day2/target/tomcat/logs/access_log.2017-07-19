@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [19/Jul/2017:07:23:27 -0700] "GET /servlet-app-day2/exportFile.jsp HTTP/1.1" 200 1615 http-bio-8080-exec-2 2415
+0:0:0:0:0:0:0:1 - - [19/Jul/2017:07:23:32 -0700] "GET /servlet-app-day2/export?username=asd&fileType=pdf HTTP/1.1" 500 2197 http-bio-8080-exec-4 221
+0:0:0:0:0:0:0:1 - - [19/Jul/2017:07:28:28 -0700] "GET /servlet-app-day2/exportFile.jsp HTTP/1.1" 200 1615 http-bio-8080-exec-1 164
+0:0:0:0:0:0:0:1 - - [19/Jul/2017:07:30:42 -0700] "GET /servlet-app-day2/export?username=asdda&fileType=pdf HTTP/1.1" 500 2197 http-bio-8080-exec-3 128370
+0:0:0:0:0:0:0:1 - - [19/Jul/2017:07:36:13 -0700] "GET /servlet-app-day2/export?username=asdda&fileType=pdf HTTP/1.1" 500 2197 http-bio-8080-exec-4 284263
