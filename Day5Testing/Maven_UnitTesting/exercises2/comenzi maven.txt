@@ -1,0 +1,66 @@
+mvn archetype:generate >templates.txt
+mvn archetype:generate
+
+maven-archetype-quickstart dupa 
+
+dupa mvn package
+mvn install 
+pentru a face jar in directorul target
+
+
+mvn clean install-> 
+
+
+//m2->repository (gasim versiunea de jar)
+
+java -cp target\MyApp-1.0-SNAPSHOT com.teamnet.zerotohero.MyApp->pentru a compila si rula 
+
+
+mvn help:effective-pom->pentru a vedea ce e in pom.xml
+mvn test pentru a rula testele
+
+
+mvn test -DskipTests=true- pentru a nu rula testele 
+
+mvn -Dtest=com.teamnet.zerotohero.AppTest test- pentru a rula un singur test
+
+mvn archetype:generate -DgroupId=com.teamnet.example3.web -DartifactId=webapp -Dversion=1.0 
+-Dpackage=com.teamnet.example3.web 
+-DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+-pentru a genera o aplicatie web maven 
+
+mvn clean install in directorul webapp
+
+
+<finalName>webapp</finalName>
+	<plugins>
+	<plugin>
+	<groupId>org.mortbay.jetty</groupId>
+	<artifactId>maven-jetty-plugin</artifactId>
+	</plugin>
+	</plugins>
+	
+dupa mvn clean install
+
+
+mvn jetty:run pentru a porni serverul 
+
+
+pentru a accesa localhost http://localhost:8080/webapp/ site-ul 
+
+
+
+Unit testing
+
+
+
+
+
+
+
+
+
+
+
+
+
