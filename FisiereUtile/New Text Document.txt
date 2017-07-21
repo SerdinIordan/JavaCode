@@ -1,0 +1,36 @@
+ALTER TABLE EMPLOYEES
+ADD CONSTRAINT FK_EMPLOYEES_JOBS
+FOREIGN KEY (EMPLOYEE_ID) REFERENCES EMPLOYEES(MANAGER_ID);
+
+SELECT * FROM EMPLOYEES E WHERE E.FIRST_NAME LIKE '[A-Z]%' AND E.EMAIL LIKE '[a-z]%'
+
+\\Marians-mdbl\_share_zth_2017
+ c.setValue(EntityUtils.castFromSqlType(c.getDbColumnName(),f.getType()));
+
+192.168.99.100
+
+daca avem clean install vom inchide procesele
+
+
+daca nu merge clean in commnand prom rulam 
+netstat -o -a -n | find "8080"
+
+taskkill /pid 1234 /f
+
+azi mvc1
+docker run -d -p 49161:1521 -p 49300:22 oracle_image:v1 pentru a porni containerul docker din sql
+docker images pentru a vedea ce imagini sunt cea cu oracle_image:v1 trebuie sa fie pentru sql
+
+
+
+programe de pe laptop
+intelijIdea, webstorm, bower,npn, oracle database 11g express edition, Docker toolbox, winscp,maven,
+oracle XE112_win64,sqldeveloper-17.2.0.188.1159-no-jre, ojdbc6-11.2.0.4.
+
+
+
+
+
+
+
+
