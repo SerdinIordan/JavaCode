@@ -4,9 +4,7 @@ import ro.teamnet.zth.appl.domain.Job;
 
 import java.util.List;
 
-/**
- * Created by Oana.Mihai on 7/15/2016.
- */
+
 public interface JobService {
     List<Job> findAll();
 

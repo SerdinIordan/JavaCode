@@ -9,6 +9,13 @@ import java.util.List;
  */
 public interface DepartmentService {
     List<Department> findAll();
+    Department findOneDepartment(Long departmentId);
 
-    Department findOne(Long departmentId);
+    Boolean delete(Long departmentId);
+
+    Department save(Department department);
+
+    Department update(Department department);
+
+
 }
